@@ -8,7 +8,7 @@ body {
 }
 
 /* Стили навигации */
-
+/* 
 .logo {
   font-size: 18px;
   font-weight: bold;
@@ -37,8 +37,8 @@ nav.sticky {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgba(42, 40, 49, 0.9); /* Полупрозрачный фон */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Тень для эффекта поднятости */
+  background-color: rgba(42, 40, 49, 0.9);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   transform: translateY(0);
 }
@@ -52,6 +52,7 @@ body.sticky-nav-padding {
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -85,10 +86,12 @@ nav a:hover {
   background-color: #343238;
 }
 
-nav h2 {
-  padding-left: 8px;
-  font-size: 28px;
+@media (max-width: 768px) {
+  nav, .logo, body.sticky-nav-padding, nav.sticky {
+    display: none;
+  }
 }
+*/
 
 /* Основа */
 
@@ -147,6 +150,26 @@ footer {
   background-color: #f3f3f3;
 }
 
+.discord-button {
+  background-color: #5865F2;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.discord-button:hover {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #7983F5;
+}
+
 button {
   background-color: #2a2831;
   color: #ffffff;
@@ -167,13 +190,20 @@ button:hover {
   background-color: #343238;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   color: white;
 }
 
 h1 {
   font-size: 68px;
   font-weight: 800;
+  margin-top: 0px;
   margin-bottom: 20px;
 }
 
@@ -219,7 +249,8 @@ a:hover {
   align-items: center;
 }
 
-.active, .accordion:hover {
+.active,
+.accordion:hover {
   background-color: #343238;
 }
 
@@ -279,7 +310,6 @@ a:hover {
   color: #000;
 }
 
-/* Для поддержки веб-браузеров, которые используют Firefox (наверно).. */
 ::-moz-selection {
   background-color: #1e2530;
   color: #000;
@@ -324,13 +354,17 @@ a:hover {
   }
 
   h1 {
-    font-size: 20px;
+    font-size: 28px;
     font-weight: 800;
   }
-  
+
   h2 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
+  }
+
+  .dark-button, .light-button, .discord-button {
+    font-size: 14px;
   }
 
   .screenshot-carousel {
